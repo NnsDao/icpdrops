@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { AuthClient } from "@dfinity/auth-client"
-import dfinityLogo from "./assets/dfinity.svg"
+import dfinityLogo from "../assets/dfinity.svg"
 
 // Note: This is just a basic example to get you started
 function Auth() {
@@ -49,19 +49,21 @@ function Auth() {
   }, [])
 
   return (
-    <div className="auth-section">
+    <div className="flex justify-start">
 
       {!signedIn && client ? (
-        <button onClick={signIn} className="auth-button">
+        <button onClick={signIn} className="flex text-white mr-5">
           Sign in
-          <img style={{ width: "33px", marginRight: "-1em", marginLeft: "0.7em" }} src={dfinityLogo} />
+          <img className="w-5 h-5 text-center ml-2 mt-1" src={dfinityLogo} />
         </button>
       ) : null}
 
       {signedIn ? (
         <>
-          <p>Signed in as: {principal}</p>
-          <button onClick={signOut} className="auth-button">Sign out</button>
+          <div data-tip={principal} className="tooltip tooltip-bottom mr-2">
+            <button className="btn bg-indigo-500">Signed in ID</button>
+          </div>
+          <button onClick={signOut} className="flex text-white">Sign out</button>
         </>
       ) : null}
 

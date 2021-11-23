@@ -11,11 +11,13 @@ import { Index } from "./view/Index"
 import { About } from "./view/About"
 import { Daoscore } from "./view/Daoscore"
 import { Detail } from "./view/Detail"
-
-
+import { DataCenter } from "./view/dataCenter/Index"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 function App() {
   return (
     <Router>
+      <Header/>
       <Switch>
         <Route exact path="/">
           <Index />
@@ -29,7 +31,11 @@ function App() {
         <Route path="/detail">
           <Detail />
         </Route>
+        <Route path="/dataCenter">
+          <DataCenter />
+        </Route>
       </Switch>
+      <Footer/>
     </Router>
   )
 }

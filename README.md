@@ -43,6 +43,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 
 + Error: EACCES: permission denied, scandir '/Users/xxxxx/work/Dfinity-React-Typescript-tailwind2/.dfx/state/replicated_state/node-100/crypto'
   + If the dfx directory permission does not work, please set the directory permission.
+  +  sudo chmod -R 777 icpdrops
 
 # [Reference]
 

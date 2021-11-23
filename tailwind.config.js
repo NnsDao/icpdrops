@@ -5,6 +5,16 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minWidth: {
+      '0': '0',
+      '25': '25%',
+      '33': '33%',
+      '50': '50%',
+      '75': '75%',
+    },
+    maxWidth: {
+      '1400px': '1400px',
+    },
     extend: {},
   },
   variants: {

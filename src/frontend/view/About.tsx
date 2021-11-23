@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { counter } from "canisters/counter"
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
 
 
 export function About() {
@@ -24,10 +24,10 @@ export function About() {
 
   return (
     <>
-        <Header title="Icpdrops" />
+        {/*<Header title="Icpdrops" />*/}
         <div>
             
-            <div className="bg-lightblue py-20 px-4">
+            <div className="bg-lightblue py-20 px-4  mx-auto min-h-screen">
                 <div className="mx-auto max-w-6xl flex flex-col md:flex-row">
                     <h2 className="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9">
                         <button type="button" className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 mb-3">About</button>
@@ -67,7 +67,7 @@ export function About() {
                 </div>
             </div>
         </div>
-        <Footer />
+        {/*<Footer />*/}
     </>
   )
 }

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import { counter } from "canisters/counter"
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
 //icon 
 import chaindataLogo from "../assets/daoscore/chaindata.svg"
 import daoindexLogo from "../assets/daoscore/daoindex.svg"
@@ -78,7 +78,7 @@ export function Daoscore() {
 
   return (
     <>
-        <Header title="Icpdrops" />
+        {/*<Header title="Icpdrops" />*/}
         <div className="container mx-auto">
 
           <div className="card-body mt-3 w-3/4 h-80">
@@ -305,7 +305,7 @@ export function Daoscore() {
           </div>
 
         </div>
-        <Footer />
+        {/*<Footer />*/}
     </>
   )
 }

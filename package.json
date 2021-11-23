@@ -15,6 +15,7 @@
     "@dfinity/principal": "0.10.0",
     "autoprefixer": "10.3.6",
     "daisyui": "^1.14.5",
+    "esbuild": "^0.13.14",
     "postcss": "^8.3.8",
     "react": "^17.0.2",
     "react-countdown": "^2.3.2",
@@ -27,7 +28,7 @@
     "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.11.9",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.1",

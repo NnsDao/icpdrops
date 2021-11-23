@@ -5,8 +5,8 @@ import { counter } from "canisters/counter"
 import Countdown from 'react-countdown';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
 
 
 const markdown = `A paragraph with *emphasis* and **strong importance**.
@@ -91,7 +91,7 @@ export function Detail() {
 
   return (
     <>
-        <Header title="Icpdrops" />
+        {/*<Header title="Icpdrops" />*/}
         <div className="container mx-auto ">
             <div className="text-sm breadcrumbs ">
                   <ul>
@@ -227,7 +227,7 @@ export function Detail() {
                
             </div>
         </div>
-        <Footer />
+        {/*<Footer />*/}
     </>
   )
 }

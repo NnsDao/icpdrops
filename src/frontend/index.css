@@ -10,7 +10,25 @@ body {
 button {
     font-weight: 600;
 }
-
+.tagA{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #eff2f5 !important;
+    color: #000 !important;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding: 4px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    -webkit-box-align: center;
+}
+a:hover {
+    color: white !important;
+    background: #808a9d !important;
+}
 .App {
     text-align: center;
 }

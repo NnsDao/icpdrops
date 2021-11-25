@@ -1,12 +1,13 @@
 import React from "react"
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useRouteMatch,
-  useParams
-} from "react-router-dom";
+  useParams,
+} from "react-router-dom"
 import { Index } from "./view/Index"
 import { About } from "./view/About"
 import { Daoscore } from "./view/Daoscore"
@@ -14,10 +15,12 @@ import { Detail } from "./view/Detail"
 import { DataCenter } from "./view/dataCenter/Index"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+
 function App() {
   return (
     <Router>
-      <Header/>
+
+      <Header />
       <Switch>
         <Route exact path="/">
           <Index />
@@ -35,7 +38,7 @@ function App() {
           <DataCenter />
         </Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   )
 }

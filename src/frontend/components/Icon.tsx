@@ -4,40 +4,34 @@
 import React from "react"
 import cs from "classnames"
 
-const modules = import.meta.globEager("./icons/*.svg")
-let svgList: Array<string> = []
-Object.entries(modules).forEach(([_, v]) => {
-  svgList.push(...v.default)
-})
-
-console.log(Object, "obj")
-// for (const path in modules) {
-//   modules[path].then(() => {
-//     // return modules[(`./icons/${path}.svg`)]
-//     // svgList.push(path)
-//     //const svgPath = modules[path]()
-//   })
-// }
-// console.log(svgList, "list")
+const getSrc = (name: string) => {
+  const path = (`./icons/${name}.svg`)
+  const modules = import.meta.globEager("./icons/*.svg")
+  return "#" + modules[path].default
+}
 type Props = {
   name: string
   className: string
 } & React.SVGAttributes<SVGElement>
 const Icon = (props: Props) => {
   const { name, className, ...rest } = props
-  console.log(modules[(`./icons/${name}.svg`)].default)
-  if (modules[(`./icons/${name}.svg`)]) {
-    const nameKey = modules[(`./icons/${name}.svg`)].default
-    return (
-      <svg className={cs("icon", className)} {...rest}>
-        <use xlinkHref={"#" + `${nameKey}`} />
-      </svg>
-    )
-  } else {
-    console.log("not found svg")
-    return null
-  }
+  return (
+    <svg className={cs("icon", className)} {...rest}>
+      <use xlinkHref={getSrc(name)} />
+    </svg>
+  )
 }
+
+// let svgList: Array<string> = []
+// for (const path in modules) {
+//   modules[path]().then(() => {
+//     // return modules[(`./icons/${path}.svg`)]
+//     // svgList.push(path)
+//     //const svgPath = modules[path]()
+//   })
+// }
+// console.log(svgList, "list")
+
 // console.log(`./icons/${name}.svg`, "name")
 // console.log(svgList.includes(`./icons/${name}.svg`))
 

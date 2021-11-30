@@ -3,7 +3,7 @@ import React from "react"
 
 const textSvg = () => (
   <svg viewBox="0 0 1024 1024" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12235"
-       width="32" height="32">
+       width="100%" height="100%" >
     <defs>
       <style type="text/css"></style>
     </defs>

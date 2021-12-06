@@ -4,7 +4,7 @@ type Props = {}
 
 const ProjectInfo: React.FC<Props> = ({}) => {
   return (
-    <div>1</div>
+    <div>{'ProjectInfo'}</div>
   )
 }
 export default ProjectInfo

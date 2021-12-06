@@ -4,7 +4,7 @@ type Props = {}
 
 const Socials: React.FC<Props> = ({}) => {
   return (
-    <div>1</div>
+    <div>{'Socials'}</div>
   )
 }
 export default Socials

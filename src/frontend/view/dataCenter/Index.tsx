@@ -6,6 +6,15 @@ import { Progress, Select, Tabs } from "antd"
 import LinkButton from "./components/LinkButton"
 import LinkWrap from "./components/LinkWrap"
 import TooltipCopy from "./components/TooltipCopy"
+import OverView from "./children/OverView"
+import Market from "./children/Market"
+import HistoricalData from "./children/HistoricalData"
+import ProjectInfo from "./children/ProjectInfo"
+import News from "./children/News"
+import Socials from "./children/Socials"
+import Ratings from "./children/Ratings"
+import Analysis from "./children/Analysis"
+import PriceEstimates from "./children/PriceEstimates"
 
 export function DataCenter() {
   const [count, setCount] = useState<string>()
@@ -25,7 +34,7 @@ export function DataCenter() {
   }
   const { Option } = Select
   let defaultsSeclected = "24h"
-  const timeSeclect = [
+  const timeSelect = [
     {
       time: "24h",
       label: "24h Low/High",
@@ -42,55 +51,20 @@ export function DataCenter() {
   const tagsList = [
     "Platform", "Distributed Computing", "Polychain Coapital Portfolio", "Exnetwork Capital Portfolio",
   ]
-
-  const tags = (
-    <div className={"flex  flex-wrap"}>
-      {
-        tagsList.map((item) => {
-          return (
-            <a className={"tagA mr-2 mb-2"} href={item} key={item}>
-              <span className={""}>{item}</span>
-            </a>
-          )
-        })
-      }
-    </div>
-
-  )
-
-  const changeSeclect = (value: string) => {
+  const changeSelect = (value: string) => {
     console.log(value)
   }
-  const { TabPane } = Tabs
   let [activeTab, setActiveTab] = useState("Overview")
-  // let activeTab = "Overview"
   const tabListArr = [
-    "Overview", "Market", "Historical Data", "Project Info", "News", "Socials", "Ratings", "Analysis.tsx", "PriceEstimates",
+    "Overview", "Market", "Historical Data", "Project Info", "News", "Socials", "Ratings", "Analysis", "PriceEstimates",
   ]
   const changeShowTab = (val: string) => {
     setActiveTab(activeTab = val)
   }
-  const tabList = (
-    <div className={"w-full max-w-1400px flex justify-between"}>
-      {
-        tabListArr.map((item) => {
-          return (
-            <div onClick={() => changeShowTab(item)} className={
-              `${activeTab === item ? " px-2 py-1 rounded font-bold bg-blue-500 text-white hover:bg-blue-600 px-2 py-1 cursor-pointer" : "" +
-                "px-2 py-1 rounded font-bold hover:bg-gray-200 hover:round cursor-pointer"
-              }`
-            } key={item}
-            >
-              {item}</div>
-          )
-        })
-      }
-    </div>
-  )
 
   return (
     <>
-      <div className={"w-full  mx-auto min-h-screen flex flex-col flex-wrap justify-center items-center "}>
+      <div className={"w-full  mx-auto min-h-screen flex flex-col flex-wrap  items-center "}>
         <div className={"w-full max-w-1400px flex flex-wrap justify-center justify-items-center "}>
           <div className={"min-w-33"}>
             <div className={"flex items-center  my-6"}>
@@ -149,9 +123,9 @@ export function DataCenter() {
                   bordered={false}
                   optionLabelProp="label"
                   dropdownMatchSelectWidth={115}
-                  onChange={changeSeclect}
+                  onChange={changeSelect}
                 >
-                  {timeSeclect.map((item) => (
+                  {timeSelect.map((item) => (
                     <Option key={item.time} value={item.time} label={item.time}>
                       <div className={"overflow-clip"}>
                         {item.label}
@@ -187,7 +161,17 @@ export function DataCenter() {
                       whitePaper={"google.com"}
             />
             <p className={"text-xs font-semibold text-gray-500"}>Tags:</p>
-            {tags}
+            <div className={"flex  flex-wrap"}>
+              {
+                tagsList.map((item) => {
+                  return (
+                    <a className={"tagA mr-2 mb-2"} href={item} key={item}>
+                      <span className={""}>{item}</span>
+                    </a>
+                  )
+                })
+              }
+            </div>
           </div>
           <div className={"min-w-66  border-gray-200 border-0 border-t mt-3"}>
             <div className={"flex pt-4 mt-2"}>
@@ -199,23 +183,37 @@ export function DataCenter() {
             </div>
           </div>
         </div>
-        <div className={"w-full border-solid border-gray-200 border-2 border-l-0 border-r-0 py-5 my-3 flex justify-center"}>
-          {tabList}
-          <div>
-
+        <div
+          className={"w-full border-solid border-gray-200 border-2 border-l-0 border-r-0 py-5 my-3 flex justify-center"}>
+          <div className={"w-full max-w-1400px flex justify-between"}>
+            {
+              tabListArr.map((item) => {
+                return (
+                  <div onClick={() => changeShowTab(item)} className={
+                    `${activeTab === item ? " px-2 py-1 rounded font-bold bg-blue-500 text-white hover:bg-blue-600 px-2 py-1 cursor-pointer" : "" +
+                      "px-2 py-1 rounded font-bold hover:bg-gray-200 hover:round cursor-pointer"
+                    }`
+                  } key={item}
+                  >
+                    {item}</div>
+                )
+              })
+            }
           </div>
         </div>
-        <Tabs defaultActiveKey="1" centered tabBarStyle={{}}>
-          <TabPane tab="Tab 1" key="1">
-            Content of Tab Pane 1
-          </TabPane>
-          <TabPane tab="Tab 2" key="2">
-            Content of Tab Pane 2
-          </TabPane>
-          <TabPane tab="Tab 3" key="3">
-            Content of Tab Pane 3
-          </TabPane>
-        </Tabs>
+        <div>
+          <div>
+            {activeTab === "Overview" ? <OverView title={'Internet Computer'} /> : ""}
+            {activeTab === "Market" ? <Market /> : ""}
+            {activeTab === "Historical Data" ? <HistoricalData /> : ""}
+            {activeTab === "Project Info" ? <ProjectInfo /> : ""}
+            {activeTab === "News" ? <News /> : ""}
+            {activeTab === "Socials" ? <Socials /> : ""}
+            {activeTab === "Ratings" ? <Ratings /> : ""}
+            {activeTab === "Analysis" ? <Analysis /> : ""}
+            {activeTab === "PriceEstimates" ? <PriceEstimates /> : ""}
+          </div>
+        </div>
       </div>
     </>
   )

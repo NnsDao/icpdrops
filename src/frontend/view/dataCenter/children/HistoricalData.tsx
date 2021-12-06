@@ -4,7 +4,7 @@ type Props = {}
 
 const HistoricalData: React.FC<Props> = ({}) => {
   return (
-    <div>1</div>
+    <div>{'HistoricalData'}</div>
   )
 }
 export default HistoricalData

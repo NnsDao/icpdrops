@@ -55,6 +55,7 @@ export default defineConfig({
     alias: {
       // Here we tell Vite the "fake" modules that we want to define
       ...aliases,
+      "@": path.resolve(__dirname, "src"),
     },
   },
   server: {
